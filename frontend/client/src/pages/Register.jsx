@@ -45,7 +45,7 @@ export default function Register() {
               onChange={(e) => setName(e.target.value)} 
               required
               className="w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="John Doe"
+              placeholder="enter your name"
             />
           </div>
           <div>
@@ -56,7 +56,7 @@ export default function Register() {
               onChange={(e) => setEmail(e.target.value)} 
               required
               className="w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="you@example.com"
+              placeholder="enter your email"
             />
           </div>
           <div>
