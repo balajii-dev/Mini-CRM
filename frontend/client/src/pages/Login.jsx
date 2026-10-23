@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import API from '../api';
+import axios from 'axios';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -11,7 +11,7 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await API.post('/auth/login', { email, password });
+      const res = await axios.post('https://mini-crm-h7bq.onrender.com/api/auth/login', { email, password });
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user)); // Save user details
       alert('Login Successful!');
