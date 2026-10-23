@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import API from '../api';
+import axios from 'axios';
 
 export default function Register() {
   const [name, setName] = useState('');
@@ -20,7 +20,7 @@ export default function Register() {
 
     setLoading(true);
     try {
-      await API.post('/auth/register', { name, email, password });
+      await axios.post('https://mini-crm-h7bq.onrender.com/api/auth/register', { name, email, password });
       alert('Registration Successful! Please login.');
       window.location.href = '/';
     } catch (err) {
@@ -74,7 +74,8 @@ export default function Register() {
             <label className="block text-sm font-medium text-gray-600">Confirm Password</label>
             <input 
               type="password" 
-              value={confirmPassword} 
+              value5={confirmPassword} 
+              value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)} 
               required
               className="w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
